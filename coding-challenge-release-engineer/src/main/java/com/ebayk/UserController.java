@@ -16,9 +16,14 @@ public class UserController {
   public List<User> listAd(@PathVariable("id") Integer userId) throws UserNotFoundException {
     return Arrays.asList(
         // This is just placeholder sample data
-           User.newUser().id(3).name("Charles").ratings(Collections.emptyList()).ratings(
+       User.newUser().id(2).name("Bob").ratings(Collections.emptyList()).ratings(
           Arrays.asList(
-              new UserRating(3, 5)
+              new UserRating(3, 4000)
+          )
+      ).build(),
+        User.newUser().id(3).name("Charles").ratings(Collections.emptyList()).ratings(
+        Arrays.asList(
+            new UserRating(3, 5)
           )
       ).build());
   
