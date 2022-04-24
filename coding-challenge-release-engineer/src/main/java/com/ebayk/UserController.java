@@ -12,9 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/users/{id}")
 public class UserController {
 
-  @RequestMapping("/rated-users")
+ @RequestMapping("/rated-users")
   public List<User> listAd(@PathVariable("id") Integer userId) throws UserNotFoundException {
-    return RatingAnalyzer.getRatedUserForRatingCreator(userId);
+    return Arrays.asList(
+        // This is just placeholder sample data
+           User.newUser().id(3).name("Charles").ratings(Collections.emptyList()).ratings(
+          Arrays.asList(
+              new UserRating(3, 5)
+          )
+      ).build());
+  
   }
-
 }
